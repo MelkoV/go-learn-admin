@@ -1,0 +1,19 @@
+version: '2.1'
+
+#networks:
+#  social:
+#    external: true
+
+services:
+
+  postgres:
+    image: postgres:11
+    ports:
+      - "${DB_EXTERNAL_PORT}:5432"
+    environment:
+      POSTGRES_USER: "${DB_USERNAME}"
+      POSTGRES_PASSWORD: "${DB_PASSWORD}"
+      POSTGRES_DB: "${DB_DB}"
+    networks:
+      - default
+
