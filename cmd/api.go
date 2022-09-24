@@ -6,6 +6,7 @@ package cmd
 
 import (
 	"fmt"
+	"golang.org/x/crypto/bcrypt"
 
 	"github.com/spf13/cobra"
 )
@@ -22,6 +23,11 @@ This application is a tool to generate the needed files
 to quickly create a Cobra application.`,
 	Run: func(cmd *cobra.Command, args []string) {
 		fmt.Println("api called")
+		hashed, _ := bcrypt.GenerateFromPassword([]byte("jndfuf88"), 8)
+		pass := string(hashed)
+		fmt.Println(pass)
+		err := bcrypt.CompareHashAndPassword([]byte("$2a$08$HwTmFXKqGgsiisAphWBN8O5ZdCejEhILJik9IoFXSO1zUzCzi.IGW"), []byte("jndfuf88"))
+		fmt.Println(err)
 	},
 }
 
