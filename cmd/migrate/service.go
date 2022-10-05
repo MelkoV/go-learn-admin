@@ -15,7 +15,7 @@ func Up(l logger.CategoryLogger, path string, dsn string) {
 	l.Info("trying migrate from %s to %s", p, dsn)
 	m := getConn(l, p, dsn)
 	m.Up()
-
+	l.Info("migrate up success")
 }
 
 func getConn(l logger.CategoryLogger, path, dsn string) *migrate.Migrate {

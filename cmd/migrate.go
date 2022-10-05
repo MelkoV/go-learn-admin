@@ -34,7 +34,7 @@ to quickly create a Cobra application.`,
 			switch action {
 			case "up":
 				l.Info("run migrations up")
-				migrate.Up(l, "migrations", dsn)
+				migrate.Up(l, viper.GetString("path.migrations"), dsn)
 			default:
 				l.Error("action not found")
 			}

@@ -5,3 +5,6 @@ db:
   password: social
   name: social
   timeZone: Europe/Moscow
+path:
+  migrations: migrations
+  models: gen
