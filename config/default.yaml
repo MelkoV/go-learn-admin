@@ -7,4 +7,3 @@ db:
   timeZone: Europe/Moscow
 path:
   migrations: migrations
-  models: gen
